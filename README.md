@@ -31,5 +31,5 @@ Parameters:
 
 This smart contract is licensed under the MIT License, allowing users to freely use, modify, and distribute the code. Refer to the SPDX-License-Identifier tag within the contract file for detailed licensing information.
 
-# owner
+# Owner
 Raffy Apalla
