@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract BOOKING_SYSTEM {
+    address public ApallaRaffy;
+    uint256 public MyTotalBudget = 0; // new variable for total amount paid
+
+    constructor() {
+        ApallaRaffy = msg.sender;
+    }
+
+    function MyBudget(uint256 _peso) public {
+        require(_peso > 20, "Payment amount should be greater than 20");
+        require(_peso <= 1000, "Your budget is too high");
+
+        MyTotalBudget += _peso;
+    }
+
+    function bookingpaid(uint256 _perKM, uint256 _KMpaid) public pure returns (uint256) {
+        require(_KMpaid <= _perKM, "YOU HAVE PAID ENOUGH PER KM");
+        return _perKM - _KMpaid;
+  
+    }
+
+    // New function to handle bookings and payments
+    function handleBookingAndPayment(uint256 _paymentAmount) public {
+        require(_paymentAmount > 0, "Payment amount should be greater than 0");
+        MyTotalBudget -= _paymentAmount;
+    }
+}
